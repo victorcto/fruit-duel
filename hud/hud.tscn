@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4ywqubab1tpb"]
+
+[ext_resource type="Script" path="res://hud/hud.gd" id="1_77hjy"]
+[ext_resource type="FontFile" uid="uid://d4em1btfmi0dj" path="res://assets/fonts/RevMiniPixel.ttf" id="1_oru28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fehki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cbiy"]
+bg_color = Color(0.980392, 0.380392, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.929071, 0.358811, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32mge"]
+bg_color = Color(0.980392, 0.772549, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.78068, 0.612926, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpjyj"]
+bg_color = Color(0.980392, 0.772549, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.78068, 0.612926, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2hkt"]
+bg_color = Color(0.980392, 0.772549, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.78068, 0.612926, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_77hjy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+offset_left = -87.0
+offset_top = -84.0
+offset_right = 87.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageLabel" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_oru28")
+theme_override_font_sizes/font_size = 34
+text = "Fruit Duel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fehki")
+
+[node name="StartButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_oru28")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
+text = "Start"
+
+[node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fehki")
+
+[node name="CreditsButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_oru28")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
+text = "Credits"
+
+[node name="HSeparator2" type="HSeparator" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fehki")
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_oru28")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
+text = "Quit Game"
+
+[node name="MessagerTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="Control/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessagerTimer" to="." method="_on_messager_timer_timeout"]

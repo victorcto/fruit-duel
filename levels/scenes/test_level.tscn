@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://crh480oxo50d7"]
+[gd_scene load_steps=5 format=3 uid="uid://crh480oxo50d7"]
 
 [ext_resource type="PackedScene" uid="uid://bqgeuvhpgql70" path="res://terrain/scenes/terrain.tscn" id="1_yowxg"]
 [ext_resource type="PackedScene" uid="uid://do3rxb2nh18de" path="res://characters/scenes/cutter.tscn" id="2_2gusb"]
-[ext_resource type="PackedScene" uid="uid://uokshqxn17kc" path="res://characters/scenes/thrower.tscn" id="3_b4c01"]
+[ext_resource type="PackedScene" path="res://characters/scenes/thrower.tscn" id="3_b4c01"]
+[ext_resource type="PackedScene" uid="uid://c4ywqubab1tpb" path="res://hud/hud.tscn" id="3_fq8sp"]
 
 [node name="Level" type="Node2D"]
 
@@ -12,7 +13,9 @@ layer_1/tile_data = PackedInt32Array(655360, 131073, 4, 655361, 131073, 4, 65536
 layer_2/tile_data = PackedInt32Array(65546, 2, 0, 131082, 2, 1, 196618, 2, 1, 262154, 2, 1, 327690, 2, 1, 393226, 2, 1, 458762, 2, 1, 524298, 2, 1, 589834, 2, 2)
 
 [node name="Cutter" parent="." instance=ExtResource("2_2gusb")]
-position = Vector2(207, 86)
+position = Vector2(300, 90)
 
 [node name="Thrower" parent="." instance=ExtResource("3_b4c01")]
-position = Vector2(70, 94)
+position = Vector2(14, 88)
+
+[node name="HUD" parent="." instance=ExtResource("3_fq8sp")]
