@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://do3rxb2nh18de"]
 
-[ext_resource type="Texture2D" uid="uid://bjltis16yt1ae" path="res://assets/Player/Player.png" id="1_2oknm"]
+[ext_resource type="Texture2D" uid="uid://bjltis16yt1ae" path="res://assets/Players/Player.png" id="1_2oknm"]
 [ext_resource type="Script" path="res://characters/scripts/cutter.gd" id="1_pn80t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhr85"]
