@@ -29,7 +29,7 @@ var bullet_gravity = 350.0
 @onready var fruit_spawn_pointer: Marker2D = $fruit_spawn_pointer
 
 func _ready() -> void:
-	_animation_tree.active = true;
+	_animation_tree.active = true
 	_state_machine = _animation_tree["parameters/playback"]
 
 func _physics_process(delta: float) -> void:

@@ -29,6 +29,7 @@ func show_game_over():
 	quit_button.show()
 
 func _on_start_button_pressed():
+	message_label.hide()
 	start_button.hide()
 	credits_button.hide()
 	quit_button.hide()

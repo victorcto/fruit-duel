@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://crh480oxo50d7"]
+[gd_scene load_steps=11 format=3 uid="uid://crh480oxo50d7"]
 
 [ext_resource type="Script" path="res://levels/scenes/test_level.gd" id="1_dhfs3"]
 [ext_resource type="PackedScene" uid="uid://bqgeuvhpgql70" path="res://terrain/scenes/terrain.tscn" id="1_yowxg"]
 [ext_resource type="PackedScene" uid="uid://do3rxb2nh18de" path="res://characters/scenes/cutter.tscn" id="2_2gusb"]
 [ext_resource type="PackedScene" uid="uid://uokshqxn17kc" path="res://characters/scenes/thrower.tscn" id="3_b4c01"]
+[ext_resource type="PackedScene" uid="uid://c4ywqubab1tpb" path="res://hud/hud.tscn" id="3_fq8sp"]
 [ext_resource type="Texture2D" uid="uid://bf84q2h24hiwn" path="res://assets/Others/fruit-stand.png" id="4_037ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwrto"]
@@ -938,6 +939,15 @@ collision_mask = 1
 position = Vector2(3, -6)
 scale = Vector2(0.5, 0.5)
 
+[node name="HUD" parent="." instance=ExtResource("3_fq8sp")]
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="StartPositionCutter" type="Marker2D" parent="."]
+position = Vector2(300, 84)
+
 [connection signal="body_entered" from="Fruit 1" to="Thrower" method="_on_fruit_1_body_entered"]
 [connection signal="body_exited" from="Fruit 1" to="Thrower" method="_on_fruit_1_body_exited"]
 [connection signal="body_entered" from="Fruit 2" to="Thrower" method="_on_fruit_2_body_entered"]
@@ -948,14 +958,5 @@ scale = Vector2(0.5, 0.5)
 [connection signal="body_exited" from="Fruit 4" to="Thrower" method="_on_fruit_4_body_exited"]
 [connection signal="body_entered" from="Fruit 5" to="Thrower" method="_on_fruit_5_body_entered"]
 [connection signal="body_exited" from="Fruit 5" to="Thrower" method="_on_fruit_5_body_exited"]
-[node name="HUD" parent="." instance=ExtResource("3_fq8sp")]
-
-[node name="GameOverTimer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
-
-[node name="StartPositionCutter" type="Marker2D" parent="."]
-position = Vector2(300, 84)
-
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="GameOverTimer" to="." method="game_over"]
