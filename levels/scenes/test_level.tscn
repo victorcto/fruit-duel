@@ -21,3 +21,13 @@ position = Vector2(300, 90)
 position = Vector2(14, 88)
 
 [node name="HUD" parent="." instance=ExtResource("3_fq8sp")]
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="StartPositionCutter" type="Marker2D" parent="."]
+position = Vector2(300, 84)
+
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="GameOverTimer" to="." method="game_over"]

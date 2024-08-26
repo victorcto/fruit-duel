@@ -14,14 +14,16 @@ var _is_attacking: bool = false
 @export var _animation_tree: AnimationTree = null
 
 func _ready() -> void:
-	_animation_tree.active = true;
+	set_physics_process(false)
+	_animation_tree.active = false;
+	_animation_tree.anim_player
 	_state_machine = _animation_tree["parameters/playback"]
 
 func _physics_process(delta: float) -> void:
 	_move()
 	_attack()
 	_animate()
-	move_and_slide()	
+	move_and_slide()
 	
 func _move() -> void:
 	var _direction: Vector2 = Vector2(
@@ -66,3 +68,10 @@ func _on_attack_timer_timeout() -> void:
 
 func _on_attack_area_body_entered(body) -> void:
 	pass # Replace with function body.
+
+func _stopOrStartCharacter(_is_active) -> void:
+	set_physics_process(_is_active)
+	_animation_tree.active = _is_active;
+		
+func start_pos(pos):
+	position = pos
