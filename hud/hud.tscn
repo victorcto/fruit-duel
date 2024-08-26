@@ -107,7 +107,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
 theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
-text = "Credits"
+text = "Controls"
 
 [node name="HSeparator2" type="HSeparator" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -129,4 +129,6 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="pressed" from="Control/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="timeout" from="MessagerTimer" to="." method="_on_messager_timer_timeout"]
