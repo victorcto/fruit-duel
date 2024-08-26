@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crh480oxo50d7"]
+[gd_scene load_steps=16 format=3 uid="uid://crh480oxo50d7"]
 
 [ext_resource type="Script" path="res://levels/scenes/test_level.gd" id="1_dhfs3"]
 [ext_resource type="PackedScene" uid="uid://bqgeuvhpgql70" path="res://terrain/scenes/terrain.tscn" id="1_yowxg"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://uokshqxn17kc" path="res://characters/scenes/thrower.tscn" id="3_b4c01"]
 [ext_resource type="PackedScene" uid="uid://c4ywqubab1tpb" path="res://hud/hud.tscn" id="3_fq8sp"]
 [ext_resource type="Texture2D" uid="uid://bf84q2h24hiwn" path="res://assets/Others/fruit-stand.png" id="4_037ef"]
+[ext_resource type="PackedScene" uid="uid://ci6frovycduea" path="res://prefabs/fruits_random.tscn" id="7_eeoki"]
+[ext_resource type="Texture2D" uid="uid://378lueg0rqiv" path="res://assets/Others/purple_mangosteen.png" id="8_cbse5"]
+[ext_resource type="Script" path="res://scripts/hud_principal_manager.gd" id="8_g00dh"]
+[ext_resource type="FontFile" uid="uid://d4em1btfmi0dj" path="res://assets/fonts/RevMiniPixel.ttf" id="9_dj67j"]
+[ext_resource type="Texture2D" uid="uid://be5hxcltwrd3u" path="res://assets/Others/sliced_mangosteen2.png" id="10_hk0u8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwrto"]
 texture = ExtResource("4_037ef")
@@ -939,14 +944,113 @@ collision_mask = 1
 position = Vector2(3, -6)
 scale = Vector2(0.5, 0.5)
 
-[node name="HUD" parent="." instance=ExtResource("3_fq8sp")]
-
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
 [node name="StartPositionCutter" type="Marker2D" parent="."]
 position = Vector2(300, 84)
+
+[node name="HUD Principal" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="HUD Principal" instance=ExtResource("7_eeoki")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="HUD Principal"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_g00dh")
+
+[node name="Container" type="MarginContainer" parent="HUD Principal/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 2
+
+[node name="Score Thrower Container" type="HBoxContainer" parent="HUD Principal/Control2/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Score Thrower Icon" type="TextureRect" parent="HUD Principal/Control2/Container/Score Thrower Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("8_cbse5")
+
+[node name="Score Thrower Count" type="Label" parent="HUD Principal/Control2/Container/Score Thrower Container"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_dj67j")
+theme_override_font_sizes/font_size = 8
+text = "000"
+vertical_alignment = 1
+
+[node name="Score Cutter Container" type="HBoxContainer" parent="HUD Principal/Control2/Container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Score Cutter Icon" type="TextureRect" parent="HUD Principal/Control2/Container/Score Cutter Container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("10_hk0u8")
+
+[node name="Score Cutter Count" type="Label" parent="HUD Principal/Control2/Container/Score Cutter Container"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_dj67j")
+theme_override_font_sizes/font_size = 8
+text = "000"
+vertical_alignment = 1
+
+[node name="Random Fruits Container" type="HBoxContainer" parent="HUD Principal/Control2/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Random Fruits Label" type="Label" parent="HUD Principal/Control2/Container/Random Fruits Container"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_dj67j")
+theme_override_font_sizes/font_size = 8
+text = "Laranja"
+vertical_alignment = 1
+
+[node name="Timer Container" type="HBoxContainer" parent="HUD Principal/Control2/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Timer Label" type="Label" parent="HUD Principal/Control2/Container/Timer Container"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_dj67j")
+theme_override_font_sizes/font_size = 8
+text = "TEMPO: 10:00"
+vertical_alignment = 1
+
+[node name="HUD" parent="." instance=ExtResource("3_fq8sp")]
 
 [connection signal="body_entered" from="Fruit 1" to="Thrower" method="_on_fruit_1_body_entered"]
 [connection signal="body_exited" from="Fruit 1" to="Thrower" method="_on_fruit_1_body_exited"]
@@ -958,5 +1062,5 @@ position = Vector2(300, 84)
 [connection signal="body_exited" from="Fruit 4" to="Thrower" method="_on_fruit_4_body_exited"]
 [connection signal="body_entered" from="Fruit 5" to="Thrower" method="_on_fruit_5_body_entered"]
 [connection signal="body_exited" from="Fruit 5" to="Thrower" method="_on_fruit_5_body_exited"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="GameOverTimer" to="." method="game_over"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

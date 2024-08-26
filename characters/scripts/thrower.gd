@@ -7,6 +7,7 @@ var _thrower_inside_area_fruit_2: bool = false
 var _thrower_inside_area_fruit_3: bool = false
 var _thrower_inside_area_fruit_4: bool = false
 var _thrower_inside_area_fruit_5: bool = false
+var shots = 1
 
 @export_category("Variables")
 @export var _move_speed: float = 64.0
@@ -130,6 +131,8 @@ func throw_fruit1():
 	fruit1_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit1_instance.velocity = fruit1_instance.transform.x * muzzle_velocity
 	fruit1_instance.gravity = bullet_gravity
+	Globals.score_thrower += shots
+	print(Globals.score_thrower)
 	
 func throw_fruit2():
 	var fruit2_instance = FRUIT_3.instantiate()
