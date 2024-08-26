@@ -69,19 +69,25 @@ func aim():
 	fruit_spawn_pointer.look_at(get_global_mouse_position())
 
 func _process(delta: float) -> void:
+	Globals.shot_fruit = ""
 	if _thrower_inside_area_fruit_1 and Input.is_action_just_released("throw"):
+		Globals.shot_fruit = "Manga"
 		throw_fruit1()
 		
 	if _thrower_inside_area_fruit_2 and Input.is_action_just_released("throw"):
+		Globals.shot_fruit = "Pêssego"
 		throw_fruit2()
 		
 	if _thrower_inside_area_fruit_3 and Input.is_action_just_released("throw"):
+		Globals.shot_fruit = "Mangostão"
 		throw_fruit3()
 		
 	if _thrower_inside_area_fruit_4 and Input.is_action_just_released("throw"):
+		Globals.shot_fruit = "Maça"
 		throw_fruit4()
 		
 	if _thrower_inside_area_fruit_5 and Input.is_action_just_released("throw"):
+		Globals.shot_fruit = "Laranja"
 		throw_fruit5()
 
 func _on_fruit_1_body_entered(body: Node2D) -> void:
@@ -131,8 +137,6 @@ func throw_fruit1():
 	fruit1_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit1_instance.velocity = fruit1_instance.transform.x * muzzle_velocity
 	fruit1_instance.gravity = bullet_gravity
-	Globals.score_thrower += shots
-	print(Globals.score_thrower)
 	
 func throw_fruit2():
 	var fruit2_instance = FRUIT_3.instantiate()
