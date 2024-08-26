@@ -1,0 +1,296 @@
+[gd_scene load_steps=7 format=3 uid="uid://rrrg3o15q2rt"]
+
+[ext_resource type="FontFile" uid="uid://d4em1btfmi0dj" path="res://assets/fonts/RevMiniPixel.ttf" id="1_ehb73"]
+[ext_resource type="Script" path="res://hud/Scripts/controls_screen.gd" id="1_mbyg2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rru20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfgre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsd5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agii3"]
+
+[node name="controls_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbyg2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.980392, 0.380392, 0, 1)
+
+[node name="ControlTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.0
+offset_right = 87.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 20
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player_1" type="Label" parent="."]
+layout_mode = 1
+offset_left = 127.0
+offset_top = 31.0
+offset_right = 205.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player_2" type="Label" parent="."]
+layout_mode = 1
+offset_left = 215.0
+offset_top = 31.0
+offset_right = 293.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Walk_up" type="Label" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 80.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Walk up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Up_arrow" type="Label" parent="."]
+layout_mode = 1
+offset_left = 122.0
+offset_top = 62.0
+offset_right = 200.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Up arrow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="W" type="Label" parent="."]
+layout_mode = 1
+offset_left = 212.0
+offset_top = 64.0
+offset_right = 290.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Walk_down" type="Label" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 77.0
+offset_right = 86.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Walk down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S" type="Label" parent="."]
+layout_mode = 1
+offset_left = 212.0
+offset_top = 78.0
+offset_right = 290.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="down_arrow" type="Label" parent="."]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 79.0
+offset_right = 199.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Down arrow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Walk_left" type="Label" parent="."]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 95.0
+offset_right = 84.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Walk left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left_arrow" type="Label" parent="."]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 96.0
+offset_right = 199.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Left arrow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Label" parent="."]
+layout_mode = 1
+offset_left = 211.0
+offset_top = 96.0
+offset_right = 289.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Walk_right" type="Label" parent="."]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 111.0
+offset_right = 87.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Walk right"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right_arrow" type="Label" parent="."]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 112.0
+offset_right = 199.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Right arrow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="Label" parent="."]
+layout_mode = 1
+offset_left = 212.0
+offset_top = 112.0
+offset_right = 290.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Throw" type="Label" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 128.0
+offset_right = 64.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Trow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left_mouse" type="Label" parent="."]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 129.0
+offset_right = 198.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Left mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cut" type="Label" parent="."]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 144.0
+offset_right = 60.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "Cut"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="G" type="Label" parent="."]
+layout_mode = 1
+offset_left = 211.0
+offset_top = 148.0
+offset_right = 289.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+text = "G"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("1_ehb73")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rru20")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gfgre")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lsd5f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_agii3")
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
