@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbhplm63l5gx1"]
+
+[ext_resource type="Script" path="res://prefabs/scripts/fruit_3.gd" id="1_a2hpg"]
+[ext_resource type="Texture2D" uid="uid://cxk7chy8njyvd" path="res://assets/Others/peach.png" id="1_it3bh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hc1to"]
+radius = 7.0
+
+[node name="Fruit 3" type="Area2D"]
+script = ExtResource("1_a2hpg")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_it3bh")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hc1to")
