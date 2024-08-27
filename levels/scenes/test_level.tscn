@@ -2487,6 +2487,8 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-1310718, 65536, 3, -1245182, 65536, 4, -1179646, 65536, 5, -1310717, 131072, 3, -1245181, 131072, 4, -1179645, 131072, 5, -1310716, 131072, 3, -1245180, 131072, 4, -1179644, 131072, 5, -1310715, 131072, 3, -1245179, 131072, 4, -1179643, 131072, 5, -1310714, 131072, 3, -1245178, 131072, 4, -1179642, 131072, 5, -1310713, 131072, 3, -1245177, 131072, 4, -1179641, 131072, 5, -1310712, 196608, 3, -1245176, 196608, 4, -1179640, 196608, 5)
 
 [node name="Wall Area" type="Area2D" parent="Wall" groups=["wall"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Collision Wall" type="CollisionShape2D" parent="Wall/Wall Area"]
 position = Vector2(88.077, -292.692)
@@ -2595,6 +2597,7 @@ texture = ExtResource("8_cbse5")
 
 [node name="Score Thrower Count" type="Label" parent="HUD Principal/Control/Container/Score Thrower Container"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_dj67j")
 theme_override_font_sizes/font_size = 8
@@ -2615,6 +2618,7 @@ texture = ExtResource("10_hk0u8")
 
 [node name="Score Cutter Count" type="Label" parent="HUD Principal/Control/Container/Score Cutter Container"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_dj67j")
 theme_override_font_sizes/font_size = 8
@@ -2629,6 +2633,7 @@ alignment = 1
 
 [node name="Random Fruits Label" type="Label" parent="HUD Principal/Control/Container/Random Fruits Container"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_dj67j")
 theme_override_font_sizes/font_size = 8
@@ -2645,6 +2650,7 @@ alignment = 1
 
 [node name="Timer Label" type="Label" parent="HUD Principal/Control/Container/Timer Container"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_dj67j")
 theme_override_font_sizes/font_size = 8
