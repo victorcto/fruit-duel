@@ -71,23 +71,18 @@ func aim():
 func _process(delta: float) -> void:
 	Globals.shot_fruit = ""
 	if _thrower_inside_area_fruit_1 and Input.is_action_just_released("throw"):
-		Globals.shot_fruit = "Manga"
 		throw_fruit1()
 		
 	if _thrower_inside_area_fruit_2 and Input.is_action_just_released("throw"):
-		Globals.shot_fruit = "Pêssego"
 		throw_fruit2()
 		
 	if _thrower_inside_area_fruit_3 and Input.is_action_just_released("throw"):
-		Globals.shot_fruit = "Mangostão"
 		throw_fruit3()
 		
 	if _thrower_inside_area_fruit_4 and Input.is_action_just_released("throw"):
-		Globals.shot_fruit = "Maça"
 		throw_fruit4()
 		
 	if _thrower_inside_area_fruit_5 and Input.is_action_just_released("throw"):
-		Globals.shot_fruit = "Laranja"
 		throw_fruit5()
 
 func _on_fruit_1_body_entered(body: Node2D) -> void:
@@ -131,37 +126,37 @@ func _on_fruit_5_body_exited(body: Node2D) -> void:
 		_thrower_inside_area_fruit_5 = false
 		
 		
-func throw_fruit1():
+func throw_fruit1(): # MANGA
 	var fruit1_instance = FRUIT_5.instantiate()
-	add_child(fruit1_instance)
+	get_tree().root.add_child(fruit1_instance)
 	fruit1_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit1_instance.velocity = fruit1_instance.transform.x * muzzle_velocity
 	fruit1_instance.gravity = bullet_gravity
 	
-func throw_fruit2():
+func throw_fruit2(): # PÊSSEGO
 	var fruit2_instance = FRUIT_3.instantiate()
-	add_child(fruit2_instance)
+	get_tree().root.add_child(fruit2_instance)
 	fruit2_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit2_instance.velocity = fruit2_instance.transform.x * muzzle_velocity
 	fruit2_instance.gravity = bullet_gravity
 	
-func throw_fruit3():
+func throw_fruit3(): # MANGOSTÃO
 	var fruit3_instance = FRUIT_4.instantiate()
-	add_child(fruit3_instance)
+	get_tree().root.add_child(fruit3_instance)
 	fruit3_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit3_instance.velocity = fruit3_instance.transform.x * muzzle_velocity
 	fruit3_instance.gravity = bullet_gravity
 	
-func throw_fruit4():
+func throw_fruit4(): # MAÇA
 	var fruit4_instance = FRUIT_2.instantiate()
-	add_child(fruit4_instance)
+	get_tree().root.add_child(fruit4_instance)
 	fruit4_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit4_instance.velocity = fruit4_instance.transform.x * muzzle_velocity
 	fruit4_instance.gravity = bullet_gravity
 
-func throw_fruit5():
+func throw_fruit5(): # LARANJA
 	var fruit5_instance = FRUIT_1.instantiate()
-	add_child(fruit5_instance)
+	get_tree().root.add_child(fruit5_instance)
 	fruit5_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit5_instance.velocity = fruit5_instance.transform.x * muzzle_velocity
 	fruit5_instance.gravity = bullet_gravity

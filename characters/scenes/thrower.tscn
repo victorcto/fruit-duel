@@ -346,7 +346,6 @@ _animation_tree = NodePath("AnimationTree")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(-1, -9)
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_mlq45")
 hframes = 8
 vframes = 6

@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_akv56"]
 radius = 7.07107
 
-[node name="Fruit 4" type="Area2D"]
+[node name="Fruit 4" type="Area2D" groups=["fruits"]]
 script = ExtResource("1_x4ere")
 
 [node name="Texture" type="Sprite2D" parent="."]
@@ -14,3 +14,5 @@ texture = ExtResource("1_o0hg0")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_akv56")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,6 +1,6 @@
 extends Control
 
-const FRUITS = ["Manga", "Laranja", "Pêssego", "Maça", "Mangostão"]
+const FRUITS = ["Laranja", "Manga", "Maça", "Mangostão", "Pêssego"]
 
 @onready var score_thrower_count: Label = $"Container/Score Thrower Container/Score Thrower Count"
 @onready var random_fruits_label: Label = $"Container/Random Fruits Container/Random Fruits Label"
@@ -13,16 +13,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	score_thrower_count.text = str("%03d" % Globals.score_thrower)
-	if Globals.shot_fruit == Globals.current_fruit and Globals.shot_fruit != "":
-		Globals.score_thrower += 1;
-	elif Globals.shot_fruit != "":
-		Globals.score_thrower -= 1;
-	
-	if Globals.score_thrower < 0:
-		Globals.score_thrower = 0;
 
 func start_timer():
-	timer.wait_time = randf_range(1.0, 5.0)
+	timer.wait_time = randf_range(1.0, 10.0)
 	timer.start()
 
 func _on_Timer_timeout():
