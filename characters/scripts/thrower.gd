@@ -30,7 +30,8 @@ var bullet_gravity = 350.0
 @onready var fruit_spawn_pointer: Marker2D = $fruit_spawn_pointer
 
 func _ready() -> void:
-	_animation_tree.active = true
+	set_physics_process(false)
+	_animation_tree.active = false
 	_state_machine = _animation_tree["parameters/playback"]
 
 func _physics_process(delta: float) -> void:
@@ -127,7 +128,7 @@ func _on_fruit_5_body_exited(body: Node2D) -> void:
 		
 		
 func throw_fruit1(): # MANGA
-	var fruit1_instance = FRUIT_5.instantiate()
+	var fruit1_instance = FRUIT_1.instantiate()
 	get_tree().root.add_child(fruit1_instance)
 	fruit1_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit1_instance.velocity = fruit1_instance.transform.x * muzzle_velocity
@@ -155,8 +156,15 @@ func throw_fruit4(): # MAÇA
 	fruit4_instance.gravity = bullet_gravity
 
 func throw_fruit5(): # LARANJA
-	var fruit5_instance = FRUIT_1.instantiate()
+	var fruit5_instance = FRUIT_5.instantiate()
 	get_tree().root.add_child(fruit5_instance)
 	fruit5_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit5_instance.velocity = fruit5_instance.transform.x * muzzle_velocity
 	fruit5_instance.gravity = bullet_gravity
+	
+func _stopOrStartCharacter(_is_active) -> void:
+	set_physics_process(_is_active)
+	_animation_tree.active = _is_active;
+	
+func start_pos(pos):
+	position = pos

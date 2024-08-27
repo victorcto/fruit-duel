@@ -7,6 +7,8 @@
 radius = 7.07107
 
 [node name="Fruit 4" type="Area2D" groups=["fruits"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_x4ere")
 
 [node name="Texture" type="Sprite2D" parent="."]

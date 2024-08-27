@@ -2555,6 +2555,9 @@ autostart = true
 [node name="StartPositionCutter" type="Marker2D" parent="."]
 position = Vector2(254, 86)
 
+[node name="StartPositionThrower" type="Marker2D" parent="."]
+position = Vector2(18, 83)
+
 [node name="HUD Principal" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="HUD Principal"]

@@ -20,7 +20,4 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("attack_cutter"):
 		Globals.score_cutter += 1;
-		print(str("%03d" % Globals.score_cutter))
-		#score_cutter_count.text = "001"
-		#score_cutter_count.text = str("%03d" % Globals.score_cutter)
 		queue_free()

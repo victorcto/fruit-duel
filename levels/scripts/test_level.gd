@@ -6,10 +6,12 @@ func game_over():
 	pass
 	#$HUD.show_game_over()
 	#$Cutter.start_pos($StartPositionCutter.position)
+	#$Thrower.start_pos($StartPositionThrower.position)
 
 func new_game():
 	await $HUD.show_message("Get Ready!")
 	$Cutter._stopOrStartCharacter(true)
+	$Thrower._stopOrStartCharacter(true)
 
 func _ready() -> void:
 	wall_area.connect("area_entered", Callable(self, "_on_wall_area_area_entered"))
