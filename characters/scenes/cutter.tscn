@@ -853,7 +853,9 @@ parameters/walk/blend_position = Vector2(0, 0)
 wait_time = 0.4
 one_shot = true
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="." groups=["attack_cutter"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(0, 12)
