@@ -7,6 +7,7 @@ signal start_game
 @onready var credits_button = $Control/VBoxContainer/CreditsButton
 @onready var quit_button = $Control/VBoxContainer/QuitButton
 @onready var cutter = $"../Cutter"
+@onready var thrower = $"../Thrower"
 
 func show_message(text):
 	message_label.text = text
@@ -17,6 +18,7 @@ func show_message(text):
 func show_game_over():
 	show_message("Game Over")
 	cutter._stopOrStartCharacter(false);
+	thrower._stopOrStartCharacter(false);
 	await messager_timer.timeout
 	
 	message_label.text = "Fruit Duel"

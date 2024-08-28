@@ -128,7 +128,7 @@ func _on_fruit_5_body_exited(body: Node2D) -> void:
 		
 		
 func throw_fruit1(): # MANGA
-	var fruit1_instance = FRUIT_1.instantiate()
+	var fruit1_instance = FRUIT_5.instantiate()
 	get_tree().root.add_child(fruit1_instance)
 	fruit1_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit1_instance.velocity = fruit1_instance.transform.x * muzzle_velocity
@@ -156,7 +156,7 @@ func throw_fruit4(): # MAÇA
 	fruit4_instance.gravity = bullet_gravity
 
 func throw_fruit5(): # LARANJA
-	var fruit5_instance = FRUIT_5.instantiate()
+	var fruit5_instance = FRUIT_1.instantiate()
 	get_tree().root.add_child(fruit5_instance)
 	fruit5_instance.global_transform = fruit_spawn_pointer.global_transform
 	fruit5_instance.velocity = fruit5_instance.transform.x * muzzle_velocity
