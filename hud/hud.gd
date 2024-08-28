@@ -8,6 +8,8 @@ signal start_game
 @onready var quit_button = $Control/VBoxContainer/QuitButton
 @onready var cutter = $"../Cutter"
 @onready var thrower = $"../Thrower"
+@onready var hud_principal = $"../HUD Principal"
+@onready var clock_timer = $"../HUD Principal/Control/Clock Timer"
 
 func show_message(text):
 	message_label.text = text
@@ -35,6 +37,7 @@ func _on_start_button_pressed():
 	credits_button.hide()
 	quit_button.hide()
 	start_game.emit()
+	clock_timer.start()
 
 
 func _on_messager_timer_timeout():
