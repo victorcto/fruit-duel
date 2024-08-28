@@ -8,7 +8,6 @@ signal start_game
 @onready var quit_button = $Control/VBoxContainer/QuitButton
 @onready var cutter = $"../Cutter"
 
-
 func show_message(text):
 	message_label.text = text
 	message_label.show()

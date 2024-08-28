@@ -5,13 +5,13 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fehki"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cbiy"]
-bg_color = Color(0.980392, 0.380392, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2hkt"]
+bg_color = Color(0.980392, 0.772549, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.929071, 0.358811, 0, 1)
+border_color = Color(0.78068, 0.612926, 0, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 2.0
 
@@ -35,13 +35,13 @@ border_color = Color(0.78068, 0.612926, 0, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2hkt"]
-bg_color = Color(0.980392, 0.772549, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cbiy"]
+bg_color = Color(0.980392, 0.380392, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.78068, 0.612926, 0, 1)
+border_color = Color(0.929071, 0.358811, 0, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 2.0
 
@@ -88,10 +88,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_oru28")
 theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
 text = "Start"
 
 [node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer"]
@@ -103,10 +103,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_oru28")
 theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
 text = "Controls"
 
 [node name="HSeparator2" type="HSeparator" parent="Control/VBoxContainer"]
@@ -118,10 +118,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_oru28")
 theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_32mge")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cpjyj")
-theme_override_styles/focus = SubResource("StyleBoxFlat_c2hkt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cbiy")
 text = "Quit Game"
 
 [node name="MessagerTimer" type="Timer" parent="."]

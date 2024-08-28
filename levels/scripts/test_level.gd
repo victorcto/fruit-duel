@@ -1,12 +1,10 @@
 extends Node2D
 
 @onready var wall_area: Area2D = $"Wall/Wall Area"
+@onready var control: Control = $"HUD Principal/Control"
 
 func game_over():
-	pass
-	#$HUD.show_game_over()
-	#$Cutter.start_pos($StartPositionCutter.position)
-	#$Thrower.start_pos($StartPositionThrower.position)
+	get_tree().change_scene_to_file("res://hud/game_over.tscn")
 
 func new_game():
 	await $HUD.show_message("Get Ready!")
@@ -15,6 +13,7 @@ func new_game():
 
 func _ready() -> void:
 	wall_area.connect("area_entered", Callable(self, "_on_wall_area_area_entered"))
+	control.time_is_up.connect(game_over)
 
 func _on_wall_area_area_entered(area: Area2D) -> void:	
 	if area.is_in_group("fruits"):
