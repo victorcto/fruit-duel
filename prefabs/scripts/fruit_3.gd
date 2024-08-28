@@ -18,6 +18,7 @@ func _on_area_entered(area: Area2D) -> void:
 		emit_signal("hit_wall")
 		queue_free()
 		
-	if area.is_in_group("attack_cutter"):
+	if area.is_in_group("attack_cutter") && Globals.current_fruit == 'Pêssego':
 		Globals.score_cutter += 1;
-		queue_free()
+
+	queue_free()
